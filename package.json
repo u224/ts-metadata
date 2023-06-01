@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A typed wrapper of the Metadata Reflection API",
   "author": "Mike Evstropov <mike.evstropov@gmail.com>",
+  "keywords": ["reflection", "metadata"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/u224/ts-metadata.git"
