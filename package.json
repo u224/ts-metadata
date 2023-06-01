@@ -9,15 +9,14 @@
   },
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json --build --clean",
+    "build": "tsc --build --clean ./tsconfig.build.json",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"./src/**/*.ts\"",
     "clean": "rimraf ./dist",
     "clean:deps": "rimraf ./node_modules",
     "test": "eslint . && nyc --reporter=text-summary mocha",
-    "prepare": "npx husky install",
-    "prepublishOnly": "npm run build"
+    "prepare": "npx husky install"
   },
   "dependencies": {
     "reflect-metadata": "*"
