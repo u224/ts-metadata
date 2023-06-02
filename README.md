@@ -19,7 +19,7 @@ import {MetadataKey} from '@u224/ts-metadata';
 const Metadata = {foo: 'bar'};
 class Target {}
 
-// Key will store the metadata type in generic.
+// Create the key with metadata type in generic.
 const key = new MetadataKey<typeof Metadata>();
 
 // Define a unique metadata entry on the target.
