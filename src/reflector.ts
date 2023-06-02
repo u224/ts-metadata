@@ -4,7 +4,12 @@ import {MetadataKey} from './metadata-key';
 /**
  * Reflector key.
  */
-export type ReflectorKey<T> = MetadataKey<T> | unknown;
+export type ReflectorKey<T> =
+  | MetadataKey<T>
+  | symbol
+  | string
+  | number
+  | object;
 
 /**
  * Typed Reflect wrapper.
