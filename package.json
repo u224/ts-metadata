@@ -13,7 +13,7 @@
     "build": "rimraf ./dist && tsc --build ./tsconfig.build.json",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --write \"./src/**/*.ts\"",
+    "format": "prettier --write \"./{src,tests}/**/*.ts\"",
     "clean": "rimraf ./dist",
     "clean:deps": "rimraf ./node_modules",
     "test": "eslint . && nyc --reporter=text-summary mocha",
