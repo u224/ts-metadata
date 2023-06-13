@@ -6,6 +6,6 @@ require('ts-node').register({
 
 module.exports = {
   extension: ["ts"],
-  spec: "./**/*.spec.ts",
+  spec: "tests/**/*.spec.ts",
   require: [path.join(__dirname, 'mocha.setup.ts')],
 }
