@@ -12,6 +12,10 @@ class MetadataKey {
      */
     constructor(name) {
         this.name = name;
+        /**
+         * Fix structural typing.
+         */
+        this._fixStructuralTyping = 'metadataKey';
     }
     /**
      * To string.

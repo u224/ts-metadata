@@ -25,7 +25,11 @@ export declare class MetadataKey<T = unknown> {
      * );
      * ```
      */
-    protected _?: T;
+    protected _fixUnusedGeneric?: T;
+    /**
+     * Fix structural typing.
+     */
+    protected _fixStructuralTyping: "metadataKey";
     /**
      * Constructor.
      *
