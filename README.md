@@ -35,6 +35,48 @@ Reflector.defineMetadata(key, 'string', Target);
 const result = Reflector.getMetadata(key, Target);
 ```
 
+A utility `getDecoratorTargetType` returns type of decorator target.
+
+```ts
+import {getDecoratorTargetType} from '@u224/ts-metadata';
+import {DecoratorTargetType as DTT} from '@u224/ts-metadata';
+
+// Let's say we have a decorator.
+function myDecorator(
+  target: object,
+  propertyKey?: string,
+  descriptorOrIndex?: PropertyDescriptor | number,
+) {
+  // To get the type of a given target we can
+  // pass decorator parameters as arguments of
+  // the function `getDecoratorTargetType`.
+  const type = getDecoratorTargetType(
+    target,
+    propertyKey,
+    descriptorOrIndex,
+  );
+  // Now we have `DecoratorTargetType`
+  // to handle decorator usage.
+  if (type === DTT.CONSTRUCTOR)
+    console.log('@myDecorator is applied to a class');
+  if (type === DTT.STATIC_METHOD)
+    console.log('@myDecorator is applied to a static method');
+  if (type === DTT.INSTANCE_METHOD)
+    console.log('@myDecorator is applied to an instance method');
+  if (type === DTT.STATIC_PROPERTY)
+    console.log('@myDecorator is applied to a static property');
+  if (type === DTT.INSTANCE_PROPERTY)
+    console.log('@myDecorator is applied to an instance property');
+  if (type === DTT.CONSTRUCTOR_PARAMETER)
+    console.log('@myDecorator is applied to a constructor parameter');
+  if (type === DTT.STATIC_METHOD_PARAMETER)
+    console.log('@myDecorator is applied to a static method parameter');
+  if (type === DTT.INSTANCE_METHOD_PARAMETER)
+    console.log('@myDecorator is applied to an instance method parameter');
+};
+
+```
+
 ## Testing
 
 ```bash

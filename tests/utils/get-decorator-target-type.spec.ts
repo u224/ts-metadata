@@ -1,10 +1,10 @@
 /* eslint @typescript-eslint/no-unused-vars: 0 */
 import {expect} from 'chai';
 import {getDecoratorTargetType} from '../../src';
-import {DecoratorTargetType as DT} from '../../src';
+import {DecoratorTargetType as DTT} from '../../src';
 
 describe('getDecoratorTargetType', () => {
-  const validate = function (value: DT) {
+  const validate = function (value: DTT) {
     return function (
       target: object,
       propertyKey?: string,
@@ -20,19 +20,19 @@ describe('getDecoratorTargetType', () => {
   };
 
   it('returns CONSTRUCTOR', () => {
-    @validate(DT.CONSTRUCTOR)
+    @validate(DTT.CONSTRUCTOR)
     class Target {}
   });
 
   it('returns INSTANCE', () => {
     class Target {}
-    const decorator = validate(DT.INSTANCE);
+    const decorator = validate(DTT.INSTANCE);
     decorator(Target.prototype);
   });
 
   it('returns STATIC_METHOD', () => {
     class Target {
-      @validate(DT.STATIC_METHOD)
+      @validate(DTT.STATIC_METHOD)
       static method() {
         /**/
       }
@@ -41,7 +41,7 @@ describe('getDecoratorTargetType', () => {
 
   it('returns INSTANCE_METHOD', () => {
     class Target {
-      @validate(DT.INSTANCE_METHOD)
+      @validate(DTT.INSTANCE_METHOD)
       method() {
         /**/
       }
@@ -50,14 +50,14 @@ describe('getDecoratorTargetType', () => {
 
   it('returns STATIC_PROPERTY', () => {
     class Target {
-      @validate(DT.STATIC_PROPERTY)
+      @validate(DTT.STATIC_PROPERTY)
       static prop?: unknown;
     }
   });
 
   it('returns INSTANCE_PROPERTY', () => {
     class Target {
-      @validate(DT.INSTANCE_PROPERTY)
+      @validate(DTT.INSTANCE_PROPERTY)
       prop?: unknown;
     }
   });
@@ -65,7 +65,7 @@ describe('getDecoratorTargetType', () => {
   it('returns CONSTRUCTOR_PARAMETER', () => {
     class Target {
       constructor(
-        @validate(DT.CONSTRUCTOR_PARAMETER)
+        @validate(DTT.CONSTRUCTOR_PARAMETER)
         param: unknown,
       ) {
         /**/
@@ -76,7 +76,7 @@ describe('getDecoratorTargetType', () => {
   it('returns STATIC_METHOD_PARAMETER', () => {
     class Target {
       static method(
-        @validate(DT.STATIC_METHOD_PARAMETER)
+        @validate(DTT.STATIC_METHOD_PARAMETER)
         param: unknown,
       ) {
         /**/
@@ -87,7 +87,7 @@ describe('getDecoratorTargetType', () => {
   it('returns INSTANCE_METHOD_PARAMETER', () => {
     class Target {
       method(
-        @validate(DT.INSTANCE_METHOD_PARAMETER)
+        @validate(DTT.INSTANCE_METHOD_PARAMETER)
         param: unknown,
       ) {
         /**/
