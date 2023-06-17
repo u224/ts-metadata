@@ -22,7 +22,7 @@ export enum DecoratorTargetType {
  */
 export function getDecoratorTargetType(
   target: object,
-  propertyKey: string | undefined,
+  propertyKey?: string,
   descriptorOrIndex?: PropertyDescriptor | number,
 ): DecoratorTargetType {
   const isCtor = typeof target === 'function';

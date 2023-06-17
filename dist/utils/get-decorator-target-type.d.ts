@@ -19,4 +19,4 @@ export declare enum DecoratorTargetType {
  * @param propertyKey
  * @param descriptorOrIndex
  */
-export declare function getDecoratorTargetType(target: object, propertyKey: string | undefined, descriptorOrIndex?: PropertyDescriptor | number): DecoratorTargetType;
+export declare function getDecoratorTargetType(target: object, propertyKey?: string, descriptorOrIndex?: PropertyDescriptor | number): DecoratorTargetType;
