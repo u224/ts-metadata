@@ -47,7 +47,7 @@ function myDecorator(
   propertyKey?: string,
   descriptorOrIndex?: PropertyDescriptor | number,
 ) {
-  // To get the type of a given target we can
+  // To get the type of a given target we should
   // pass decorator parameters as arguments of
   // the function `getDecoratorTargetType`.
   const type = getDecoratorTargetType(
