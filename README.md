@@ -16,18 +16,18 @@ Metadata definition by the `MetadataKey<T>`
 import {Reflector} from '@u224/ts-metadata';
 import {MetadataKey} from '@u224/ts-metadata';
 
-const Metadata = {foo: 'bar'};
-class Target {}
+const metadata = {foo: 'bar'};
+class Target {/* ... */}
 
 // Create the key with metadata type in generic.
-const key = new MetadataKey<typeof Metadata>();
+const key = new MetadataKey<typeof metadata>();
 
 // Define a unique metadata entry on the target.
 // `defineMetadata` checks metadata type by the key.
-Reflector.defineMetadata(key, Metadata, Target);
+Reflector.defineMetadata(key, metadata, Target);
 
 // TypeError: Argument of type 'string' is not assignable
-// to parameter of type 'typeof Metadata'.
+// to parameter of type 'typeof metadata'.
 Reflector.defineMetadata(key, 'string', Target);
 
 // ReturnType of `getMetadata` and `getOwnMetadata`
