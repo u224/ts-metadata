@@ -23,7 +23,7 @@ class Target {}
 const key = new MetadataKey<typeof Metadata>();
 
 // Define a unique metadata entry on the target.
-// defineMetadata checks metadata type by the key.
+// `defineMetadata` checks metadata type by the key.
 Reflector.defineMetadata(key, Metadata, Target);
 
 // TypeError: Argument of type 'string' is not assignable
