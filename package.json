@@ -1,6 +1,6 @@
 {
   "name": "@u224/ts-metadata",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A typed wrapper of the Metadata Reflection API",
   "author": "Mike Evstropov <mike.evstropov@gmail.com>",
   "keywords": ["reflection", "metadata"],
